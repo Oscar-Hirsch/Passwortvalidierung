@@ -5,6 +5,7 @@ public class Main {
         boolean item = specialChars("<hello>");
 
     }
+
     public static boolean containsDigits(String s) {
         boolean result = false;
         for (char a : s.toCharArray()) {
@@ -23,7 +24,7 @@ public class Main {
     public static boolean containsCapitalAndSmallLetter(String s) {
         boolean hasCapitalLetter = false;
         boolean hasSmallLetter = false;
-        for (char a: s.toCharArray()) {
+        for (char a : s.toCharArray()) {
             if (Character.isUpperCase(a)) {
                 hasCapitalLetter = true;
             } else if (Character.isLowerCase(a)) {
@@ -43,13 +44,15 @@ public class Main {
     }
 
     public static boolean specialChars(String password) {
-        for(char a: password.toCharArray()) {
+        for (char a : password.toCharArray()) {
 
-            if(a >= '!' && a <= '/') {
+            if (a >= '!' && a <= '/') {
                 return true;
             } else if (a >= ':' && a <= '@') {
                 return true;
             } else if (a >= '[' && a <= '`') {
+                return true;
+            } else if (a >= '{' && a <= '~') {
                 return true;
             }
         }
