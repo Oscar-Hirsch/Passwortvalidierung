@@ -16,7 +16,6 @@ public class Main {
 
     public static boolean isLongEnough(String s) {
         int minimalLength = 8;
-        if (s.length() < minimalLength) return false;
-        return true;
+        return s.length() >= minimalLength;
     }
 }
