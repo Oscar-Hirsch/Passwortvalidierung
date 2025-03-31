@@ -33,6 +33,7 @@ class MainTest {
         assertFalse(actual);
     }
 
+    @Test
     void containsCapitalLetter_returnsTrue_whenInputContainsCapitalLetter() {
         String input = "Hello324";
         boolean actual = Main.containsCapitalLetter(input);
