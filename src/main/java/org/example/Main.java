@@ -1,8 +1,10 @@
 package org.example;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        boolean item = specialChars("<hello>");
+        System.out.println(generatePassword());
 
     }
 
@@ -58,4 +60,23 @@ public class Main {
         }
         return false;
     }
+
+    public static String generatePassword() {
+        Random initial = new Random();
+        int min = 33;
+        int max = 126;
+
+        int start = initial.nextInt((max - min) + 1) + min;
+
+        String password = "" + (char) start;
+
+
+        while (!(containsCapitalAndSmallLetter(password) && uniquePassword(password) && specialChars(password) && containsCapitalAndSmallLetter(password) && uniquePassword(password) && isLongEnough(password))) {
+            Random rand = new Random();
+            int n = rand.nextInt((max - min) + 1) + min;
+            password = password + (char) n;
+        }
+        return password;
+    }
+
 }
