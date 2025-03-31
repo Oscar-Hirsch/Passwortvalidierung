@@ -69,6 +69,21 @@ class MainTest {
         assertFalse(actual);
     }
 
+    @Test
+    void specialChars_returnTrue_whenInputContainsSpecialChars() {
+        String input = "T!g3r$tr0ng#";
+        boolean actual = Main.specialChars(input);
+        assertTrue(actual);
+    }
+
+    @Test
+    void specialChars_returnFalse_whenInputContainsNoSpecialChars() {
+        String input = "Tigerstrong30";
+        boolean actual = Main.specialChars(input);
+        assertFalse(actual);
+    }
+
+
 
 
 

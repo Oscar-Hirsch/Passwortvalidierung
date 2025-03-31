@@ -2,6 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
+        boolean item = specialChars("<hello>");
 
     }
     public static boolean containsDigits(String s) {
@@ -30,5 +31,28 @@ public class Main {
             }
         }
         return hasCapitalLetter && hasSmallLetter;
+    }
+
+    public static boolean uniquePassword(String password) {
+        String[] pawned_passwords = {"Password", "qwerasdf", "hallo123", "thisisapassword", "1234567890"};
+        for (String s : pawned_passwords) {
+            if (password.equalsIgnoreCase(s)) return false;
+
+        }
+        return true;
+    }
+
+    public static boolean specialChars(String password) {
+        for(char a: password.toCharArray()) {
+
+            if(a >= '!' && a <= '/') {
+                return true;
+            } else if (a >= ':' && a <= '@') {
+                return true;
+            } else if (a >= '[' && a <= '`') {
+                return true;
+            }
+        }
+        return false;
     }
 }
