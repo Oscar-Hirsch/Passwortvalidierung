@@ -34,10 +34,25 @@ class MainTest {
     }
 
     @Test
-    void containsCapitalLetter_returnsTrue_whenInputContainsCapitalLetter() {
+    void containsCapitalAndSmallLetter_returnsTrue_whenInputContainsCapitalAndSmallLetter() {
         String input = "Hello324";
-        boolean actual = Main.containsCapitalLetter(input);
+        boolean actual = Main.containsCapitalAndSmallLetter(input);
         assertTrue(actual);
+    }
+
+    @Test
+    void containsCapitalAndSmallLetter_returnsFalse_whenInputContainsNoSmallLetter() {
+        String input = "HELLIJDFDO242%§$&/";
+        boolean actual = Main.containsCapitalAndSmallLetter(input);
+        assertFalse(actual);
+
+    }
+
+    @Test
+    void containsCapitalAndSmallLetter_returnsFalse_whenInputContainsNoCapitalLetter() {
+        String input = "hellofasf234!§$%&/(!)";
+        boolean actual = Main.containsCapitalAndSmallLetter(input);
+        assertFalse(actual);
     }
 
 

@@ -19,12 +19,16 @@ public class Main {
         return s.length() >= minimalLength;
     }
 
-    public static boolean containsCapitalLetter(String s) {
+    public static boolean containsCapitalAndSmallLetter(String s) {
+        boolean hasCapitalLetter = false;
+        boolean hasSmallLetter = false;
         for (char a: s.toCharArray()) {
             if (Character.isUpperCase(a)) {
-                return true;
+                hasCapitalLetter = true;
+            } else if (Character.isLowerCase(a)) {
+                hasSmallLetter = true;
             }
         }
-        return false;
+        return hasCapitalLetter && hasSmallLetter;
     }
 }
