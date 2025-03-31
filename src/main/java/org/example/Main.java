@@ -18,4 +18,13 @@ public class Main {
         int minimalLength = 8;
         return s.length() >= minimalLength;
     }
+
+    public static boolean containsCapitalLetter(String s) {
+        for (char a: s.toCharArray()) {
+            if (Character.isUpperCase(a)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
