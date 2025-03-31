@@ -55,6 +55,20 @@ class MainTest {
         assertFalse(actual);
     }
 
+    @Test
+    void uniquePassword_returnsTrue_whenInputIsUnique() {
+        String input = "Ouhasd9234uioi98";
+        boolean actual = Main.uniquePassword(input);
+        assertTrue(actual);
+    }
+
+    @Test
+    void uniquePassword_returnsFalse_whenInputIsNotUnique() {
+        String input = "password";
+        boolean actual = Main.uniquePassword(input);
+        assertFalse(actual);
+    }
+
 
 
 
